@@ -1,6 +1,6 @@
 <?php
 
-define('BASE_URL', 'http://localhost/SanjuanBautista/');
+define('BASE_URL', 'http://localhost/SanJuanBautista/');
 define('DEFAULT_CONTROLLER', 'index');
 define('DEFAULT_LAYOUT', 'default');
 define('SESSION_TIME', 0);
