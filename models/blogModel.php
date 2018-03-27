@@ -40,6 +40,18 @@ class blogModel extends Model{
     public function eliminarNoticia($id){
         $this->_db->query("DELETE FROM noticias WHERE id = $id;");
     }
+    
+    public function editarBlog($titulo,$desc,$img,$id){
+//        echo $titulo,$desc,$img,$id;
+        $stmt = $this->_db->prepare("UPDATE noticias SET nombre=:titulo,cuerpo=:desc,imagen=:img WHERE id=:id;");
+        $stmt->bindParam(":titulo",$titulo, PDO::PARAM_STR);
+        $stmt->bindParam(":desc",$desc, PDO::PARAM_STR);
+        $stmt->bindParam(":img",$img, PDO::PARAM_STR);
+        $stmt->bindParam(":id",$id, PDO::PARAM_STR);
+        $stmt->execute();
+//        exit;
+    }
+
     public function addComentario($comentario,$noticia){
         $stmt = $this->_db->prepare("INSERT INTO comentarios (comentario,usuario,noticia,reply,fecha) VALUES (:coment,:user,:noticia,0,NOW())");
         $id = Session::get("id");
@@ -49,9 +61,9 @@ class blogModel extends Model{
         $stmt->execute();
     }
     
-    public function getComentarios($id){
+    public function getComentarios($idNoticia){
         $stmt = $this->_db->prepare("SELECT t1.*,t2.nombre,t2.imagen,t2.usuario AS nick FROM comentarios t1 INNER JOIN usuarios t2 ON t1.usuario = t2.id WHERE reply = 0 AND noticia = :id ORDER BY id DESC;");
-        $stmt->bindParam(":id",$id, PDO::PARAM_INT);
+        $stmt->bindParam(":id",$idNoticia, PDO::PARAM_INT);
         $stmt->execute();
         $resp = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $resp;
@@ -60,5 +72,10 @@ class blogModel extends Model{
     public function eliminarComentario($id){
         $this->_db->query("DELETE FROM comentarios WHERE id = $id");
     }
-    
+    public function editarComentario($coment,$id){
+        $stmt = $this->_db->prepare("UPDATE comentarios SET comentario=:coment WHERE id=:id");
+        $stmt->bindParam(":coment",$coment, PDO::PARAM_STR);
+        $stmt->bindParam(":id",$id, PDO::PARAM_STR);
+        $stmt->execute();
+    }
 }

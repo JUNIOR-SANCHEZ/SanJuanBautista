@@ -7,15 +7,15 @@ class errorController extends Controller {
     }
 
     public function index() {
-        $this->_view->titulo = "Error";
-        $this->_view->mensaje = $this->_getError();
+        $this->_view->assign("titulo","Error");
+        $this->_view->assign("mensaje",$this->_getError());
         $this->_view->renderizar('index');
     }
     
     public function access($codigo) {
-        $this->_view->titulo = "Error";
-        $this->_view->mensaje = $this->_getError($codigo);
-        $this->_view->renderizar('index');
+        $this->_view->assign("titulo","Error");
+        $this->_view->assign("mensaje",$this->_getError($codigo));
+        $this->_view->renderizar('access',"error");
     }
 
     private function _getError($codigo = false) {

@@ -9,6 +9,7 @@ class Cifrado{
         
         return hash_final($hash);
     }
+    
     public static function encryption($string) {
         $output = FALSE;
         $key = hash('sha256', SECRET_KEY);

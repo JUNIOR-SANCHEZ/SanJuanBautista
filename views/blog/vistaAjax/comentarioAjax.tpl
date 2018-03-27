@@ -11,9 +11,12 @@
       <h4 class="media-heading">
           {$cmt.nick} 
           {if Session::get("id") == $cmt.usuario} 
-              <a class="eliminarComentario pull-right" attr-noticiaId="{Cifrado::encryption($cmt.noticia)}" attr-comentarioId="{Cifrado::encryption($cmt.id)}">
+              <abbr title="Eliminar Comentario" class="initialism"><a class="eliminarComentario btn btn-blue btn-small pull-right" attr-noticiaId="{Cifrado::encryption($cmt.noticia)}" attr-comentarioId="{Cifrado::encryption($cmt.id)}">
                   <i class="glyphicon glyphicon-trash"></i>
-              </a> 
+              </a></abbr>
+              <abbr title="Editar Comentario" class="initialism"><a class="editarComentario btn btn-blue btn-small pull-right" attr-comentarioId="{Cifrado::encryption($cmt.id)}"  attr-coment="{$cmt.comentario}">
+                  <i class="glyphicon glyphicon-edit"></i>
+              </a></abbr>
           {/if}
       </h4>
     {$cmt.comentario} 

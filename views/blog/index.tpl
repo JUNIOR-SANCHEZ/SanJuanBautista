@@ -22,6 +22,7 @@
                         <a href="{$_layoutParams.root}blog/noticia/{Cifrado::encryption($dt.id)}">{$dt.nombre}</a> 
                         {if $_acl->permiso("admin_access")}
                         <abbr title="Eliminar Noticia" class="initialism"><a href="{$_layoutParams.root}blog/eliminarNoticia/{Cifrado::encryption($dt.id)}" class="btn btn-blue btn-lg pull-right"><i class="glyphicon glyphicon-trash"></i></a></abbr>
+                        <abbr title="Editar Noticia" class="initialism"><a href="{$_layoutParams.root}blog/editar/{Cifrado::encryption($dt.id)}" class="btn btn-blue btn-lg pull-right"><i class="glyphicon glyphicon-edit"></i></a></abbr>
                         {/if}
                     </h3>
                 </div>
@@ -62,7 +63,7 @@
         =====================================================================-->                        
 {if $_acl->permiso("admin_access")}
 <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-12">{$_layoutParams.root}
         <form action="{$_layoutParams.root}blog" method="POST" enctype="multipart/form-data" class="form-horizontal text-left" >
             <input type="hidden" name="guardar" value="1"/>
             <fieldset>
@@ -90,8 +91,6 @@
                         <input type="submit" class="btn btn-primary btn-lg" value="GUARDAR"/>
                         
                     </div>
-                    
-                        
                 </div>
             </fieldset>
         </form>

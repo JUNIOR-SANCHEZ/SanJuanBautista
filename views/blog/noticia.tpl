@@ -10,6 +10,7 @@
                             <a href="">{$noticia.nombre}</a> 
                             {if $_acl->permiso("admin_access")}
                                 <abbr title="Eliminar Noticia" class="initialism"><a href="{$_layoutParams.root}blog/eliminarNoticia/{Cifrado::encryption($noticia.id)}" class="btn btn-blue btn-lg pull-right"><i class="glyphicon glyphicon-trash"></i></a></abbr>
+                                <abbr title="Editar Noticia" class="initialism"><a href="{$_layoutParams.root}blog/editar/{Cifrado::encryption($noticia.id)}" class="btn btn-blue btn-lg pull-right"><i class="glyphicon glyphicon-edit"></i></a></abbr>
                             {/if}
                         </h3>
                 </div>
@@ -70,8 +71,7 @@
                 <div class="panel-body">                
                     <form id="formComentario" accept-charset="UTF-8">
                         <input type="hidden" value="1" name="guardar"/>
-                        <input type="hidden" value="{Cifrado::encryption($noticia.id)}" name="noticiaId"/>
-                        <textarea id="textareaComentario" class="form-control counted" name="message" placeholder="Digite uma mensage" rows="5" style="margin-bottom:10px;"></textarea>
+                        <textarea id="textareaComentario" class="form-control counted" attr-noticiaId="{Cifrado::encryption($noticia.id)}" name="message" placeholder="Digite uma mensage" rows="5" style="margin-bottom:10px;"></textarea>
                         <h6 class="pull-right" id="counter">320 characters remaining</h6>
                         <button id="addComentario" class="btn btn-info" type="submit">Comentar</button>
                     </form>
@@ -107,7 +107,7 @@
                                       <abbr title="Eliminar Comentario" class="initialism"><a class="eliminarComentario btn btn-blue btn-small pull-right" attr-noticiaId="{Cifrado::encryption($cmt.noticia)}" attr-comentarioId="{Cifrado::encryption($cmt.id)}">
                                           <i class="glyphicon glyphicon-trash"></i>
                                       </a></abbr>
-                                      <abbr title="Editar Comentario" class="initialism"><a class="editarComentario btn btn-blue btn-small pull-right" attr-noticiaId="{Cifrado::encryption($cmt.noticia)}" attr-comentarioId="{Cifrado::encryption($cmt.id)}">
+                                      <abbr title="Editar Comentario" class="initialism"><a class="editarComentario btn btn-blue btn-small pull-right" attr-comentarioId="{Cifrado::encryption($cmt.id)}"  attr-coment="{$cmt.comentario}">
                                           <i class="glyphicon glyphicon-edit"></i>
                                       </a></abbr>
                                   {/if}

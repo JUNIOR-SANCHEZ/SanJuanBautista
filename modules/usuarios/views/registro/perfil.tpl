@@ -1,6 +1,7 @@
 <br><br>
 <div class="container">
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="POST" action="{$_layoutParams.root}usuarios/registro/perfil" enctype="multipart/form-data">
+        <input type="hidden" name="guardar" value="1"/>
         <fieldset>
             <center><legend>DATOS DEL USUARIO</legend></center>
             <br>
@@ -10,25 +11,25 @@
                     <div class="form-group">
                         <label for="name" class="col-md-4">Nombres y Apellidos</label>
                         <div class="col-md-8">
-                            <input type="text" id="name" class="form-control" placeholder="Cu&aacute;l es tu nombre" value="{$usuario.nombre}"/>
+                            <input type="text" id="name" name="txt_nombre" class="form-control" placeholder="Cu&aacute;l es tu nombre" value="{$usuario.nombre}"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="user" class="col-md-4">Usuario</label>
                         <div class="col-md-8">
-                            <input type="text" id="user" class="form-control" placeholder="Cu&aacute;l es tu usuario" value="{$usuario.usuario}"/>
+                            <input type="text" id="user" name="txt_usuario" class="form-control" placeholder="Cu&aacute;l es tu usuario" value="{$usuario.usuario}"/>
                          </div>
                     </div>
                     <div class="form-group">
                         <label for="email" class="col-md-4">Email</label>
                         <div class="col-md-8">
-                            <input type="text" id="email" class="form-control" placeholder="Cu&aacute;l es tu email" value="{$usuario.email}"/>
+                            <input type="text" id="email" name="txt_correo" class="form-control" placeholder="Cu&aacute;l es tu email" value="{$usuario.email}"/>
                          </div>
                     </div>   
                     <div class="form-group">
                         <label for="phone" class="col-md-4">Telefono</label>
                         <div class="col-md-8">
-                            <input type="text" id="phone" class="form-control" placeholder="&iquest;Cu&aacute;l es tu telefono &quest;" value="{$usuario.phone}"/>
+                            <input type="text" id="phone" name="phone" class="form-control" placeholder="&iquest;Cu&aacute;l es tu telefono &quest;" value="{$usuario.phone}"/>
                          </div>
                     </div>
                     <div class="form-group">
@@ -56,24 +57,33 @@
                     <div class="form-group">
                         <label for="ocupacion" class="col-md-4">Ocupaci&oacute;n</label>
                         <div class="col-md-8">
-                            <input type="text" id="phone" class="form-control" placeholder="En que trabajas" value="{$usuario.ocupacion}"/>
+                            <input type="text" id="phone" name="ocupacion" class="form-control" placeholder="En que trabajas" value="{$usuario.ocupacion}"/>
                          </div>
                     </div>
 
             </div>
             <div class="col-md-4">
-                <img class="text-center" src="{$_layoutParams.root}public/img/user/{$usuario.imagen}" alt="nose encuentra la imagen"/>
-                <div class="form-group">
-                    <label class="btn btn-primary btn-lg" for="my-file-selector">
+                <center>
+                    <div class="form-group" >
+                        <div class="col-md-12" id="contenedorImg">
+                            <img class="text-center" style="width:100%;height:280px;" src="{$_layoutParams.root}public/img/user/{$usuario.imagen}" alt="nose encuentra la imagen"/>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                    <label class="btn btn-primary btn-lg btn-block" for="my-file-selector">
                         <input id="my-file-selector" name="imagen" type="file" style="display:none;">
+                        <input type="hidden" name="rutaImagen" value="{$usuario.imagen}"/>
                          IMAGEN
                     </label>
-                </div>    
+                </div>
+                </center>
             </div>
         </div>
          <div class="row">
              <div class="col-md-4 col-md-offset-8">
-                 <a href="" class="btn btn-orange pull-right">Guardar Cambios</a>
+                 <input type="submit" class="btn btn-orange pull-right" value="Guardar Cambios">
              </div>
          </div>
          </fieldset>
