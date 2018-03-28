@@ -48,19 +48,19 @@
             <div class="contenedor2-items">
                 <center>
                     <div class="ih-item circle effect1">
-                        <a href="{$_layoutParams.root}fundacion/vision">
+                        <a target="black" href="{$_layoutParams.root}public/files/MISION_Y_VISION.pdf">
                             <div class="spinner"></div>
                             <div class="img"><img src="{$_layoutParams.ruta_img}vision.jpg" alt=""></div>
                             <div class="info">
                                 <div class="info-back">
-                                    <h3>VISI&Oacute;N DE LA EMPRESA</h3>
+                                    <h3>VISI&Oacute;N Y VISI&Oacute;N DE LA EMPRESA</h3>
                                 </div>
                             </div>
                         </a>
                     </div>
                 </center>
-                            <h2>Misi&oacute;n</h2>
-                <p>Anímate a ayudar a los adultos mayores en situacion de vulnerabilidad en la ciudad de El Guabo. Con tu colaboración muchas vidas se pueden cambiar.</p>
+                            <h2>Misi&oacute;n y Visi&oacute;n</h2>
+                <p>Redacci&oacute;n de la visi&oacute;n y misi&oacute;n y que tenemos como objetivo para alcanzar como una institucion de servicio social para los adultos mayore en la ciudad del Guabo</p>
 
             </div>
         </div>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-28 02:53:09
+<?php /* Smarty version Smarty-3.1.8, created on 2018-03-28 07:13:17
          compiled from "C:\xampp\htdocs\SanJuanBautista\views\fundacion\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:6700637385ab7ccf3e82a33-82510432%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '482162dbc9feb65159d9c6630a50905c94cf56ed' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanJuanBautista\\views\\fundacion\\index.tpl',
-      1 => 1522198389,
+      1 => 1522213991,
       2 => 'file',
     ),
   ),
@@ -59,21 +59,21 @@ articulo.jpg" alt="img"></div>
             <div class="contenedor2-items">
                 <center>
                     <div class="ih-item circle effect1">
-                        <a href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-fundacion/vision">
+                        <a target="black" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
+public/files/MISION_Y_VISION.pdf">
                             <div class="spinner"></div>
                             <div class="img"><img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_img'];?>
 vision.jpg" alt=""></div>
                             <div class="info">
                                 <div class="info-back">
-                                    <h3>VISI&Oacute;N DE LA EMPRESA</h3>
+                                    <h3>VISI&Oacute;N Y VISI&Oacute;N DE LA EMPRESA</h3>
                                 </div>
                             </div>
                         </a>
                     </div>
                 </center>
-                            <h2>Misi&oacute;n</h2>
-                <p>Anímate a ayudar a los adultos mayores en situacion de vulnerabilidad en la ciudad de El Guabo. Con tu colaboración muchas vidas se pueden cambiar.</p>
+                            <h2>Misi&oacute;n y Visi&oacute;n</h2>
+                <p>Redacci&oacute;n de la visi&oacute;n y misi&oacute;n y que tenemos como objetivo para alcanzar como una institucion de servicio social para los adultos mayore en la ciudad del Guabo</p>
 
             </div>
         </div>
