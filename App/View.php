@@ -65,6 +65,8 @@ class View extends Smarty {
         );
         if (is_readable($this->_rutas["view"] . $vista . ".tpl")) {
             if ($noLayout) {
+                $this->assign("_layoutParams", $params);
+                $this->assign("_acl", $this->_acl);
                 $this->template_dir = $this->_rutas["view"];
                 $this->display($this->_rutas["view"] . $vista . ".tpl");
                 exit;

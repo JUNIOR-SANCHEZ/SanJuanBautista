@@ -15,6 +15,7 @@ class blogController extends Controller {
         parent::__construct();
         $this->_blog = $this->loadModel("blog");
         $this->_view->setTemplate($this->_template);
+        
     }
 
     public function index($pagina = false) {

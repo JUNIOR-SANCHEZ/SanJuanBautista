@@ -40,6 +40,7 @@ $(document).on('ready', function(){
     
     $("#buscarnoticia").keyup(function(){
         paginacion();
+        return false;
     });
     
 

@@ -1,14 +1,18 @@
-{assign var=root value="http://localhost/sanjuanbautista/"}
-
 {if isset($noticia) && !empty($noticia)}
 <article>
     <div id="fb-root"></div>
     {foreach item=dt from=$noticia}
     <div class="post-image">
             <div class="post-heading">
-                    <h3><a href="#">{$dt.nombre}</a></h3>
+                    <h3>
+                        <a href="{$_layoutParams.root}blog/noticia/{Cifrado::encryption($dt.id)}">{$dt.nombre}</a>
+                        {if $_acl->permiso("admin_access")}
+                        <abbr title="Eliminar Noticia" class="initialism"><a href="{$_layoutParams.root}blog/eliminarNoticia/{Cifrado::encryption($dt.id)}" class="btn btn-blue btn-lg pull-right"><i class="glyphicon glyphicon-trash"></i></a></abbr>
+                        <abbr title="Editar Noticia" class="initialism"><a href="{$_layoutParams.root}blog/editar/{Cifrado::encryption($dt.id)}" class="btn btn-blue btn-lg pull-right"><i class="glyphicon glyphicon-edit"></i></a></abbr>
+                        {/if}
+                    </h3>
             </div>
-                    {if !empty($dt.imagen)}<img style="width: 800px;height: 400px;" src="{$root}public/img/noticia/thumb/thumb_{$dt.imagen}" alt="{$root}public/img/noticia/thumb/thumb_{$dt.imagen}" />{/if}
+                    {if !empty($dt.imagen)}<img style="width: 800px;height: 400px;" src="{$_layoutParams.root}public/img/noticia/thumb/thumb_{$dt.imagen}" alt="{$_layoutParams.root}public/img/noticia/thumb/thumb_{$dt.imagen}" />{/if}
     </div>
     <p>
              {$dt.cuerpo}
@@ -19,7 +23,7 @@
                     <li><i class="icon-user"></i><a href="#"> Admin</a></li>
                     <li><i class="icon-comments"></i><a href="#">4 Comments</a></li>
             </ul>
-            <a href="{$root}blog/noticia/{Cifrado::encryption($dt.id)}" class="pull-right">Continuar leyendo<i class="icon-angle-right"></i></a>
+            <a href="{$_layoutParams.root}blog/noticia/{Cifrado::encryption($dt.id)}" class="pull-right">Continuar leyendo<i class="icon-angle-right"></i></a>
     </div>
     {/foreach}
 </article>
