@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-27 15:38:36
+<?php /* Smarty version Smarty-3.1.8, created on 2018-03-28 19:31:33
          compiled from "C:\xampp\htdocs\SanJuanBautista\views\galeria\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:10390965995ab7d0aff0f784-91510972%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '19bca45ef70cf5dc484bbee83fd7166ac3f8b517' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanJuanBautista\\views\\galeria\\index.tpl',
-      1 => 1522157915,
+      1 => 1522258292,
       2 => 'file',
     ),
   ),
@@ -19,6 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_5ab7d0aff34da7_28716791',
   'variables' => 
   array (
+    '_acl' => 0,
     '_layoutParams' => 0,
     'galeria' => 0,
     'con' => 0,
@@ -33,8 +34,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <ul class="portfolio-categ filter">
                
             </ul>
+            <?php if ($_smarty_tpl->tpl_vars['_acl']->value->permiso("nuevo_publ")){?>
             <a href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
 galeria/nuevo" class="btn btn-blue pull-right"><i class="glyphicon glyphicon-new-window"></i> INGRESAR GALERIA</a>
+            <?php }?>
             <div class="clearfix"></div>
             <div class="row">
                 <section id="projects">

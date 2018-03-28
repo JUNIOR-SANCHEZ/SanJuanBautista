@@ -8,7 +8,9 @@
                 <li class="icon"><a href="#" title="">Icons</a></li>
                 <li class="graphic"><a href="#" title="">Graphic design</a></li>*}
             </ul>
+            {if $_acl->permiso("nuevo_publ")}
             <a href="{$_layoutParams.root}galeria/nuevo" class="btn btn-blue pull-right"><i class="glyphicon glyphicon-new-window"></i> INGRESAR GALERIA</a>
+            {/if}
             <div class="clearfix"></div>
             <div class="row">
                 <section id="projects">
