@@ -122,8 +122,8 @@ class registroController extends Controller {
                 exit;
             }
             $imagen = '';
-            $phone = '';
-            $ocupacion='';
+            $phone = '**********';
+            $ocupacion='**********';
             if($this->getPostParam("phone")){
                 $phone = $this->getPostParam("phone");
             }
@@ -132,6 +132,17 @@ class registroController extends Controller {
             }
             if($this->getPostParam("ocupacion")){
                 $ocupacion = $this->getPostParam("ocupacion");
+            }
+            if($this->getPostParam("sexo") === "void"){
+                $this->_view->assign("_error","Debe selecionar el sexo");
+                $this->_view->renderizar("perfil", "registro");
+                exit;
+            }
+            
+            if($this->getPostParam("estado") === "void"){
+                $this->_view->assign("_error","Debe selecionar su estado.");
+                $this->_view->renderizar("perfil", "registro");
+                exit;
             }
 
             if ($_FILES['imagen']['name']) {
@@ -155,11 +166,8 @@ class registroController extends Controller {
                     exit;
                 }
             }
-            
-//            editUser($img,$name, $user, $email, $phone, $sexo, $estado, $id = false)
-            $this->_sqlUser->editUser($imagen,$this->getSql("txt_nombre"), $this->getPostParam("txt_usuario"), $this->getPostParam("txt_correo"),$phone, "hombre", "soltero",$ocupacion);
+            $this->_sqlUser->editUser($imagen,$this->getSql("txt_nombre"), $this->getPostParam("txt_usuario"), $this->getPostParam("txt_correo"),$phone, $this->getPostParam("sexo"), $this->getPostParam("estado"),$ocupacion);
             $this->redireccionar("usuarios/registro/perfil");
-//            $this->_view->renderizar("perfil", "registro");
             exit;
         }
         $this->_view->renderizar("perfil", "registro");

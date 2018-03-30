@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-28 19:31:40
+<?php /* Smarty version Smarty-3.1.8, created on 2018-03-30 03:23:19
          compiled from "C:\xampp\htdocs\SanJuanBautista\modules\usuarios\views\registro\perfil.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:8068110465ab7d0b30d0e57-90856059%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b73bd8fb7f5574aad5e91a7f25e75e6f15a9b2ea' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanJuanBautista\\modules\\usuarios\\views\\registro\\perfil.tpl',
-      1 => 1522248207,
+      1 => 1522372999,
       2 => 'file',
     ),
   ),
@@ -66,21 +66,21 @@ usuarios/registro/perfil" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="sex" class="col-md-4">Sexo</label>
                         <div class="col-md-8">
-                            <select id="sex" class="form-control">
-                                <option selected>Seleccionar</option>
-                                <option <?php if ($_smarty_tpl->tpl_vars['usuario']->value['sexo']=="hombre"){?> selected <?php }?>>Masculino</option>
-                                <option <?php if ($_smarty_tpl->tpl_vars['usuario']->value['sexo']=="mujer"){?> selected <?php }?>>Femenino</option>
+                            <select id="sex" name="sexo" class="form-control">
+                                <option  value="void" selected>Seleccionar</option>
+                                <option <?php if ($_smarty_tpl->tpl_vars['usuario']->value['sexo']=="hombre"){?> selected <?php }?> value="hombre">Masculino</option>
+                                <option <?php if ($_smarty_tpl->tpl_vars['usuario']->value['sexo']=="mujer"){?> selected <?php }?> value="mujer">Femenino</option>
                             </select>
                          </div>
                     </div>
                     <div class="form-group">
                         <label for="estado" class="col-md-4">Estado Civil</label>
                         <div class="col-md-8">
-                            <select id="estado" class="form-control">
-                                <option>Seleccionar</option>
-                                <option <?php if ($_smarty_tpl->tpl_vars['usuario']->value['estadoCivil']=="soltero"){?> selected <?php }?>>Soltero</option>
-                                <option <?php if ($_smarty_tpl->tpl_vars['usuario']->value['estadoCivil']=="casado"){?> selected <?php }?> >Cassado</option>
-                                <option <?php if ($_smarty_tpl->tpl_vars['usuario']->value['estadoCivil']=="divorsiado"){?> selected <?php }?>>Divorsiado</option>
+                            <select id="estado" name="estado" class="form-control">
+                                <option selected value="void" >Seleccionar</option>
+                                <option <?php if ($_smarty_tpl->tpl_vars['usuario']->value['estadoCivil']=="soltero"){?> selected <?php }?>>Soltero(a)</option>
+                                <option <?php if ($_smarty_tpl->tpl_vars['usuario']->value['estadoCivil']=="casado"){?> selected <?php }?> >Casado(a)</option>
+                                <option <?php if ($_smarty_tpl->tpl_vars['usuario']->value['estadoCivil']=="divorsiado"){?> selected <?php }?>>Divorsiado(a)</option>
                                 <option >otros</option>
                             </select>
                          </div>
@@ -105,7 +105,7 @@ public/img/user/<?php echo $_smarty_tpl->tpl_vars['usuario']->value['imagen'];?>
                     </div>
                     
                     
-                    <div class="form-group">
+                    <div class="form-group"> 
                     <label class="btn btn-primary btn-lg btn-block" for="my-file-selector">
                         <input id="my-file-selector" name="imagen" type="file" style="display:none;">
                         <input type="hidden" name="rutaImagen" value="<?php echo $_smarty_tpl->tpl_vars['usuario']->value['imagen'];?>

@@ -35,21 +35,21 @@
                     <div class="form-group">
                         <label for="sex" class="col-md-4">Sexo</label>
                         <div class="col-md-8">
-                            <select id="sex" class="form-control">
-                                <option selected>Seleccionar</option>
-                                <option {if $usuario.sexo == "hombre"} selected {/if}>Masculino</option>
-                                <option {if $usuario.sexo == "mujer"} selected {/if}>Femenino</option>
+                            <select id="sex" name="sexo" class="form-control">
+                                <option  value="void" selected>Seleccionar</option>
+                                <option {if $usuario.sexo == "hombre"} selected {/if} value="hombre">Masculino</option>
+                                <option {if $usuario.sexo == "mujer"} selected {/if} value="mujer">Femenino</option>
                             </select>
                          </div>
                     </div>
                     <div class="form-group">
                         <label for="estado" class="col-md-4">Estado Civil</label>
                         <div class="col-md-8">
-                            <select id="estado" class="form-control">
-                                <option>Seleccionar</option>
-                                <option {if $usuario.estadoCivil == "soltero"} selected {/if}>Soltero</option>
-                                <option {if $usuario.estadoCivil == "casado"} selected {/if} >Cassado</option>
-                                <option {if $usuario.estadoCivil == "divorsiado"} selected {/if}>Divorsiado</option>
+                            <select id="estado" name="estado" class="form-control">
+                                <option selected value="void" >Seleccionar</option>
+                                <option {if $usuario.estadoCivil == "soltero"} selected {/if}>Soltero(a)</option>
+                                <option {if $usuario.estadoCivil == "casado"} selected {/if} >Casado(a)</option>
+                                <option {if $usuario.estadoCivil == "divorsiado"} selected {/if}>Divorsiado(a)</option>
                                 <option >otros</option>
                             </select>
                          </div>
@@ -71,7 +71,7 @@
                     </div>
                     
                     
-                    <div class="form-group">
+                    <div class="form-group"> 
                     <label class="btn btn-primary btn-lg btn-block" for="my-file-selector">
                         <input id="my-file-selector" name="imagen" type="file" style="display:none;">
                         <input type="hidden" name="rutaImagen" value="{$usuario.imagen}"/>
