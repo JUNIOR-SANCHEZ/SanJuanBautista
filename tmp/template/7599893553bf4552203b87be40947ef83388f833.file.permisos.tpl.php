@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-27 02:57:49
+<?php /* Smarty version Smarty-3.1.8, created on 2018-03-31 20:15:01
          compiled from "C:\xampp\htdocs\SanJuanBautista\modules\usuarios\views\index\permisos.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:14428544765ab9970db85140-78508857%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7599893553bf4552203b87be40947ef83388f833' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanJuanBautista\\modules\\usuarios\\views\\index\\permisos.tpl',
-      1 => 1521994922,
+      1 => 1522520101,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_5ab9970dbbbd18_77993942',
   'variables' => 
   array (
     'info' => 0,
@@ -25,8 +27,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'v' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5ab9970dbbbd18_77993942',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5ab9970dbbbd18_77993942')) {function content_5ab9970dbbbd18_77993942($_smarty_tpl) {?><div class="container">
 <style type="text/css">

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-26 02:16:45
+<?php /* Smarty version Smarty-3.1.8, created on 2018-03-31 20:09:05
          compiled from "C:\xampp\htdocs\SanJuanBautista\views\layout\default\template.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13759491825ab7ccd8be1fb0-14698482%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b12a5b576b18aeb314a06464c8c4da95d60a37f7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanJuanBautista\\views\\layout\\default\\template.tpl',
-      1 => 1522023403,
+      1 => 1522510073,
       2 => 'file',
     ),
   ),
