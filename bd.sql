@@ -2,7 +2,7 @@
 SQLyog Ultimate v11.11 (64 bit)
 MySQL - 5.5.5-10.1.29-MariaDB : Database - sanjuanbautista
 *********************************************************************
-*/
+*/
 
 /*!40101 SET NAMES utf8 */;
 
@@ -32,11 +32,9 @@ CREATE TABLE `comentarios` (
   KEY `comentarios_noticia` (`noticia`),
   CONSTRAINT `comentarios_noticia` FOREIGN KEY (`noticia`) REFERENCES `noticias` (`id`),
   CONSTRAINT `comentarios_usuarios` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 /*Data for the table `comentarios` */
-
-insert  into `comentarios`(`id`,`comentario`,`usuario`,`noticia`,`reply`,`fecha`) values (54,'es una pagina chevere ',1,6,0,'2018-03-24 14:26:50'),(56,'hola \r\nestoy bien',3,6,0,'2018-03-24 15:29:15'),(81,'Que buena esta la  pagina',1,6,0,'2018-03-26 23:19:17'),(89,'que bueno',3,6,0,'2018-03-26 23:36:59');
 
 /*Table structure for table `galeria` */
 
@@ -49,11 +47,11 @@ CREATE TABLE `galeria` (
   `imagen` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   `usuario` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 /*Data for the table `galeria` */
 
-insert  into `galeria`(`id`,`tema`,`descripcion`,`imagen`,`usuario`) values (10,'animal','cocodrilo','upl_5aba657a6e569.jpg',3),(13,'Manualidades','realizando trabajos manuales con los adultos mayores','upl_5aba71e0efd02.jpg',1);
+insert  into `galeria`(`id`,`tema`,`descripcion`,`imagen`,`usuario`) values (19,'nmvc',' ,vcxmn,..x','upl_5acda54e93804.jpg',13);
 
 /*Table structure for table `noticias` */
 
@@ -104,7 +102,7 @@ CREATE TABLE `permisos_role` (
 
 /*Data for the table `permisos_role` */
 
-insert  into `permisos_role`(`role`,`permiso`,`valor`) values (1,1,1),(1,2,1),(1,3,1),(1,4,1),(2,3,1),(2,4,1),(3,2,0),(3,3,1),(4,5,1),(1,1,1),(1,2,1),(1,3,1),(1,4,1),(1,5,1),(1,6,1),(1,7,1),(2,3,1),(2,4,1),(2,5,1),(2,6,1),(3,2,0),(3,3,1),(3,5,1),(3,6,1),(3,2,0),(3,3,1),(3,5,1),(3,6,1),(4,5,1),(4,6,1),(1,1,1),(1,2,1),(1,3,1),(1,4,1),(1,5,1),(1,6,1),(1,7,1),(2,3,1),(2,4,1),(2,5,1),(2,6,1),(4,5,1),(4,6,1),(4,7,1);
+insert  into `permisos_role`(`role`,`permiso`,`valor`) values (1,1,1),(1,2,1),(1,3,1),(1,4,1),(2,3,1),(2,4,1),(3,2,0),(3,3,1),(4,5,1),(1,1,1),(1,2,1),(1,3,1),(1,4,1),(1,5,1),(1,6,1),(1,7,1),(2,3,1),(2,4,1),(2,5,1),(2,6,1),(3,2,0),(3,3,1),(3,5,1),(3,6,1),(3,2,0),(3,3,1),(3,5,1),(3,6,1),(4,5,1),(4,6,1),(1,1,1),(1,2,1),(1,3,1),(1,4,1),(1,5,1),(1,6,1),(1,7,1),(2,3,1),(2,4,1),(2,5,1),(2,6,1),(4,5,1),(4,6,1),(4,7,1),(4,5,1),(4,6,1),(4,7,1),(4,5,1),(4,6,1),(4,7,1),(4,5,1),(4,6,1),(4,7,1);
 
 /*Table structure for table `permisos_usuario` */
 
@@ -121,6 +119,8 @@ CREATE TABLE `permisos_usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 /*Data for the table `permisos_usuario` */
+
+insert  into `permisos_usuario`(`usuario`,`permiso`,`valor`) values (13,1,1),(13,2,1),(13,3,1),(13,4,1),(13,1,1),(13,2,1),(13,3,1),(13,4,1),(13,5,1),(13,6,1),(13,7,1);
 
 /*Table structure for table `pruebas` */
 
@@ -165,7 +165,7 @@ CREATE TABLE `usuarios` (
   `email` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `phone` varchar(20) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `sexo` enum('hombre','mujer') COLLATE utf8_spanish2_ci DEFAULT NULL,
-  `estadoCivil` enum('casado','soltero','divorsiado') COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `estadoCivil` enum('Soltero(a)','Casado(a)','Divorciado(a)','Otros') COLLATE utf8_spanish2_ci DEFAULT NULL,
   `ocupacion` varchar(100) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `role` int(11) NOT NULL,
   `estado` tinyint(4) DEFAULT NULL,
@@ -174,11 +174,11 @@ CREATE TABLE `usuarios` (
   PRIMARY KEY (`id`),
   KEY `role` (`role`),
   CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`role`) REFERENCES `roles` (`id_role`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 /*Data for the table `usuarios` */
 
-insert  into `usuarios`(`id`,`nombre`,`imagen`,`usuario`,`pass`,`email`,`phone`,`sexo`,`estadoCivil`,`ocupacion`,`role`,`estado`,`fecha`,`codigo`) values (1,'Admin','upl_5ab9cde09cd2e.jpg','admin1','710f9d5d43fb39fb06facf99d677841a2e19c07b','admin@admin.com','09888222','hombre','soltero','empresario',1,1,'2018-03-23',1963007335),(3,'Usuario','upl_5ab5a450cfef4.jpg','usuario','710f9d5d43fb39fb06facf99d677841a2e19c07b','usuario@usuario.com',NULL,NULL,NULL,NULL,4,1,'2018-03-23',1963007335);
+insert  into `usuarios`(`id`,`nombre`,`imagen`,`usuario`,`pass`,`email`,`phone`,`sexo`,`estadoCivil`,`ocupacion`,`role`,`estado`,`fecha`,`codigo`) values (13,'Admin','upl_5acda05f64a84.png','admin','710f9d5d43fb39fb06facf99d677841a2e19c07b','admin@admin.com','**********','hombre','Soltero(a)','**********',1,1,'2018-04-11',1963007335),(14,'Usuario','upl_5acda6debfdc9.jpg','user','710f9d5d43fb39fb06facf99d677841a2e19c07b','user@user.com',NULL,NULL,NULL,NULL,4,1,'2018-04-11',1963007335);
 
 /* Trigger structure for table `noticias` */
 
@@ -193,6 +193,31 @@ DELIMITER $$
     END */$$
 
 
+DELIMITER ;
+
+/* Procedure structure for procedure `eliminarUsuario` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `eliminarUsuario` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `eliminarUsuario`(_id int)
+BEGIN
+	declare valorComent int  default 0;
+	DECLARE valorPerUsu INT  DEFAULT 0;
+	select count(id) into valorComent from comentarios where usuario = _id;
+	SELECT COUNT(usuario) INTO valorPerUsu FROM permisos_usuario WHERE usuario = _id;
+	if (valorComent > 0) then
+		delete from comentarios where usuario = _id;
+	end if;
+	IF (valorPerUsu > 0) THEN
+		DELETE FROM permisos_usuario WHERE usuario = _id;
+	END IF;
+	
+		delete from usuarios where id = _id;
+	
+	
+    END */$$
 DELIMITER ;
 
 /* Procedure structure for procedure `insertar` */
