@@ -1,4 +1,4 @@
-<nav class="navbar navbar-azul">
+<nav class="navbar  navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -7,7 +7,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Brand</a>
+            <a class="navbar-brand" href="#">
+                <img alt="Logo" height="25px" width="25px" src="<?=BASE_URL.'public/img/logo.png'?>">
+            </a>
         </div>
         
         <?php if(isset($menu) && sizeof($menu) > 0 ) : ?>

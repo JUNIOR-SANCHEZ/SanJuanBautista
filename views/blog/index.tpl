@@ -61,9 +61,9 @@
 <!--    ======================================================================= 
                                    CONMIENSO DEL FORMULARIO 
         =====================================================================-->                        
-{if $_acl->permiso("admin_access")}
+{if $_acl->permiso("nuevo_publ") }
 <div class="row">
-    <div class="col-lg-12">{$_layoutParams.root}
+    <div class="col-lg-12">
         <form action="{$_layoutParams.root}blog" method="POST" enctype="multipart/form-data" class="form-horizontal text-left" >
             <input type="hidden" name="guardar" value="1"/>
             <fieldset>

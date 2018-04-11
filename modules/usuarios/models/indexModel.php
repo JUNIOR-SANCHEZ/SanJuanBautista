@@ -12,7 +12,7 @@ class indexModel extends Model
         $usuarios = $this->_db->prepare(
                 "select u.*,r.role from usuarios u, roles r ".
                 "where u.role = r.id_role "
-                . " AND u.nombre Like :nombre;"
+                . " AND u.usuario Like :nombre;"
                 );
          $usuarios->execute(array(
             ":nombre"=>"%$dato%"
@@ -58,7 +58,7 @@ class indexModel extends Model
                 );
     }
     public function eliminarUsuario($id){
-        $this->_db->query("DELETE FROM usuarios WHERE id = $id;");
+        $this->_db->query("CALL eliminarUsuario($id);");
     }
 }
 

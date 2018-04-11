@@ -55,7 +55,7 @@ class registroController extends Controller {
                 $this->_view->renderizar("index", "registro");
                 exit;
             }
-            $imagen = '';
+            $imagen = "upl_5acda05f64a84.png";
 
             if ($_FILES['image']['name']) {
                 $ruta = $this->getRutaCarpetaImagen("user");

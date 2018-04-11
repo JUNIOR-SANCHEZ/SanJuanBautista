@@ -2,22 +2,15 @@
     <div class="col-md-4">
         <h2>Usuarios</h2>
     </div>
-    <div class=" col-md-8">
-        <form action="{$_layoutParams.root}usuarios" method="POST" class="form-horizontal">
+    <div class=" col-md-8" >
+        <form class="navbar-form navbar-right"  action="{$_layoutParams.root}usuarios" method="POST" role="search">
             <div class="form-group">
-                <div class=" col-md-6 pull-right">
-                <input class="form-control" type="text" name="share" id="share" placeholder="Share"/>
-                </div>
-                
-                
+              <input type="text" class="form-control" placeholder="Buscar por usuario" name="share" id="share">
             </div>
-            <div class="form-group">
-                <div class="col-md-6 pull-right">
-                    <input class=" btn btn-info" type="submit" value="Share"/>
-                </div>
-            </div>
+            <button type="submit" class="btn btn-default">BUSCAR</button>
         </form>
     </div>
+    
 </div>
 
 

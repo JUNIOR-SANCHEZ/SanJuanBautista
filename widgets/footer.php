@@ -17,7 +17,7 @@ class footerWidget extends Widget{
         $footer["footer"] = array(
             "position"=>"footer",
             "show"=>"all",
-            "hide"=>array("login","registro","blog","galeria","error","codigo")
+            "hide"=>array("blog","galeria","error","codigo")
         );
         return $footer[$menu];
     }

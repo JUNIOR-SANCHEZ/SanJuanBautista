@@ -29,7 +29,7 @@ class registroModel extends Model {
     }
 
     public function addUser($name, $user, $pass, $email, $imagen) {
-        $statement = $this->_db->prepare("INSERT INTO usuarios (nombre,usuario,imagen,pass,email,role,estado,fecha,codigo) VALUES (:name,:user,:imagen,:pass,:email,4,1,NOW(),1963007335);");
+        $statement = $this->_db->prepare("CALL agregarUsuario(:name,:user,:imagen,:pass,:email);");
         $clave = Cifrado::getHash("sha1", $pass, HASH_KEY);
         $statement->bindParam(":name", $name, PDO::PARAM_STR);
         $statement->bindParam(":user", $user, PDO::PARAM_STR);
@@ -47,7 +47,7 @@ class registroModel extends Model {
             $id = Session::get("id");
         }
         // echo $estado;exit;
-        $statement = $this->_db->prepare("UPDATE usuarios SET  imagen=:img,nombre=:name,usuario=:user,email=:email,phone=:phone,sexo=:sexo,estadoCivil=:estadoCivil,ocupacion=:ocupacion WHERE id = :id");
+        $statement = $this->_db->prepare("CALL modificarUsuario(:img,:name,:user,:email,:phone,:sexo,:estadoCivil,:ocupacion,:id);");
         $statement->bindParam(":name", $name, PDO::PARAM_STR);
         $statement->bindParam(":user", $user, PDO::PARAM_STR);
         $statement->bindParam(":img", $img, PDO::PARAM_STR);

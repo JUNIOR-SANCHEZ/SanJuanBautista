@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-04-07 17:40:33
+<?php /* Smarty version Smarty-3.1.8, created on 2018-04-11 23:37:10
          compiled from "C:\xampp\htdocs\SanJuanBautista\views\blog\noticia.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:14259552265ab991efc72e89-58611946%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '38704b66ffaf00cc8cecc91f18b3f68b79944e7e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanJuanBautista\\views\\blog\\noticia.tpl',
-      1 => 1522248209,
+      1 => 1523482534,
       2 => 'file',
     ),
   ),
@@ -165,7 +165,7 @@ public/img/user/thumb/thumb_<?php echo $_smarty_tpl->tpl_vars['cmt']->value['ima
                               <h4 class="media-heading">
                                   <?php echo $_smarty_tpl->tpl_vars['cmt']->value['nick'];?>
  
-                                  <?php if (Session::get("id")==$_smarty_tpl->tpl_vars['cmt']->value['usuario']){?>
+                                  <?php if (Session::get("id")==$_smarty_tpl->tpl_vars['cmt']->value['usuario']||$_smarty_tpl->tpl_vars['_acl']->value->permiso("admin_access")){?>
                                       <abbr title="Eliminar Comentario" class="initialism"><a class="eliminarComentario btn btn-blue btn-small pull-right" attr-noticiaId="<?php echo Cifrado::encryption($_smarty_tpl->tpl_vars['cmt']->value['noticia']);?>
 " attr-comentarioId="<?php echo Cifrado::encryption($_smarty_tpl->tpl_vars['cmt']->value['id']);?>
 ">

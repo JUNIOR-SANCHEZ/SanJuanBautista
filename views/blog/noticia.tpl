@@ -103,7 +103,7 @@
                           <div class="media-body">
                               <h4 class="media-heading">
                                   {$cmt.nick} 
-                                  {if Session::get("id") == $cmt.usuario}
+                                  {if Session::get("id") == $cmt.usuario || $_acl->permiso("admin_access")}
                                       <abbr title="Eliminar Comentario" class="initialism"><a class="eliminarComentario btn btn-blue btn-small pull-right" attr-noticiaId="{Cifrado::encryption($cmt.noticia)}" attr-comentarioId="{Cifrado::encryption($cmt.id)}">
                                           <i class="glyphicon glyphicon-trash"></i>
                                       </a></abbr>

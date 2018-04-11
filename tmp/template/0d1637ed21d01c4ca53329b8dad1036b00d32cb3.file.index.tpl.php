@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-04-11 08:09:27
+<?php /* Smarty version Smarty-3.1.8, created on 2018-04-11 20:43:32
          compiled from "C:\xampp\htdocs\SanJuanBautista\modules\usuarios\views\index\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:10694420615ab7ec09e5bbb9-14267182%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0d1637ed21d01c4ca53329b8dad1036b00d32cb3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanJuanBautista\\modules\\usuarios\\views\\index\\index.tpl',
-      1 => 1523426963,
+      1 => 1523472212,
       2 => 'file',
     ),
   ),
@@ -29,23 +29,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <div class="col-md-4">
         <h2>Usuarios</h2>
     </div>
-    <div class=" col-md-8">
-        <form action="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-usuarios" method="POST" class="form-horizontal">
+    <div class=" col-md-8" >
+        <form class="navbar-form navbar-right"  action="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
+usuarios" method="POST" role="search">
             <div class="form-group">
-                <div class=" col-md-6 pull-right">
-                <input class="form-control" type="text" name="share" id="share" placeholder="Share"/>
-                </div>
-                
-                
+              <input type="text" class="form-control" placeholder="Buscar por usuario" name="share" id="share">
             </div>
-            <div class="form-group">
-                <div class="col-md-6 pull-right">
-                    <input class=" btn btn-info" type="submit" value="Share"/>
-                </div>
-            </div>
+            <button type="submit" class="btn btn-default">BUSCAR</button>
         </form>
     </div>
+    
 </div>
 
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-04-07 17:34:27
+<?php /* Smarty version Smarty-3.1.8, created on 2018-04-11 23:32:45
          compiled from "C:\xampp\htdocs\SanJuanBautista\views\blog\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:6836911175ab7ccdde2d512-46603455%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bf87571d95b96317006a0a2956713bf15ff41784' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanJuanBautista\\views\\blog\\index.tpl',
-      1 => 1522519649,
+      1 => 1523482328,
       2 => 'file',
     ),
   ),
@@ -111,10 +111,9 @@ blog/noticia/<?php echo Cifrado::encryption($_smarty_tpl->tpl_vars['dt']->value[
 <!--    ======================================================================= 
                                    CONMIENSO DEL FORMULARIO 
         =====================================================================-->                        
-<?php if ($_smarty_tpl->tpl_vars['_acl']->value->permiso("admin_access")){?>
+<?php if ($_smarty_tpl->tpl_vars['_acl']->value->permiso("nuevo_publ")){?>
 <div class="row">
-    <div class="col-lg-12"><?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
-
+    <div class="col-lg-12">
         <form action="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
 blog" method="POST" enctype="multipart/form-data" class="form-horizontal text-left" >
             <input type="hidden" name="guardar" value="1"/>
