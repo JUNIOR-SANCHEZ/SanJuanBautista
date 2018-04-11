@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-27 06:10:27
+<?php /* Smarty version Smarty-3.1.8, created on 2018-04-07 17:42:06
          compiled from "C:\xampp\htdocs\SanJuanBautista\views\blog\vistaAjax\comentarioAjax.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:5213253885ab99272c609d6-99445372%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7aff463b5f096c5f8b76d9728ca92303a7337fc1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanJuanBautista\\views\\blog\\vistaAjax\\comentarioAjax.tpl',
-      1 => 1522123810,
+      1 => 1522248209,
       2 => 'file',
     ),
   ),

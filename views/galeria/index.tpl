@@ -2,15 +2,16 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <ul class="portfolio-categ filter">
-               {* <li class="all active"><a href="#">All</a></li>
+            {*<ul class="portfolio-categ filter">
+                <li class="all active"><a href="#">All</a></li>
                 <li class="web"><a href="#" title="">Web design</a></li>
                 <li class="icon"><a href="#" title="">Icons</a></li>
-                <li class="graphic"><a href="#" title="">Graphic design</a></li>*}
-            </ul>
+                <li class="graphic"><a href="#" title="">Graphic design</a></li>
+            </ul>*}
             {if $_acl->permiso("nuevo_publ")}
             <a href="{$_layoutParams.root}galeria/nuevo" class="btn btn-blue pull-right"><i class="glyphicon glyphicon-new-window"></i> INGRESAR GALERIA</a>
             {/if}
+            <h2 class="text-center my-5 py-5">GALERIA</h2>
             <div class="clearfix"></div>
             <div class="row">
                 <section id="projects">

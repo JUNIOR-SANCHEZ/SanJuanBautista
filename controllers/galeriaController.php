@@ -101,6 +101,7 @@ class galeriaController extends Controller{
                 $imagen = $this->getPostParam("nameImagen");
             }
             if ($_FILES['imagen']['name']) {
+                $this->eliminarImg("galeria",$imagen);
                 $ruta = $this->getRutaCarpetaImagen("galeria");
                 $upload = new upload($_FILES['imagen'], 'es_Es');
                 $upload->allowed = array('image/*');

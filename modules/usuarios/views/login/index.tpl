@@ -57,10 +57,10 @@
     <form action="{$_layoutParams.root}usuarios/login" method="POST">
         <input type="hidden" name="enviar" value="1"/>
         <div class="form-inputs">
-            <input type="text" id="usuario" class="login-inputs" name="txt_usuario" placeholder="Usuario" value="{if isset($datos)} {$datos.txt_usuario}{/if}">
+            <input type="text" id="usuario" class="login-inputs" name="txt_usuario" placeholder="Usuario" value="{$datos.txt_usuario|default:""}">
         </div>
         <div class="form-inputs">
-            <input type="password" id="clave" class="login-inputs" name="txt_pass" placeholder="Contraseña" value="{if isset($datos)}) {$datos.txt_pass} {/if}">
+            <input type="password" id="clave" class="login-inputs" name="txt_pass" placeholder="Contraseña" value="{$datos.txt_pass|default:""}">
         </div>
 
         <input class="btn-Ingresar" type="submit" value="ENTRAR"/>

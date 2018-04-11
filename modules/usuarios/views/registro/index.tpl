@@ -62,16 +62,16 @@ input {
 </style>
 
 
-<form method="POST" action="{$_layoutParams.root}usuarios/registro" id="frmRegistro" class="form-register" enctype="multipart/form-data">
+<form method="POST" action="{$_layoutParams.root}usuarios/registro" id="formRegister" class="form-register" enctype="multipart/form-data">
     <input type="hidden" name="enviar" value="1"/>
     <h2 class="form-titulo">CREAR UNA CUENTA</h2>
     <div class="registra-inputs">
-        <input class="input-100" type="text" name="txt_nombre"  placeholder="Nombre"  value="{$datos.txt_nombre|default:""}">
-        <input class="input-100" type="text" name="txt_usuario"  placeholder="Usuario" value="{$datos.txt_usuario|default:""}">
-        <input class="input-100" type="text" name="txt_correo"  placeholder="Correo"  value="{$datos.txt_correo|default:""}" >
-        <input class="input-100" type="password" name="txt_pass"   placeholder="Contraseña" value="{$datos.txt_pass|default:""}">
-        <input class="input-100" type="password" name="txt_passConfirmar"  placeholder="Confirmar Contraseña"  value="{$datos.txt_passConfirmar|default:""}" >
-        <input class="input-100" type="file" name="imagen"  placeholder="Confirmar Contraseña" />
+        <input class="input-100" type="text" name="name"  placeholder="Nombre"  value="{$datos.name|default:""}">
+        <input class="input-100" type="text" name="user"  placeholder="Usuario" value="{$datos.user|default:""}">
+        <input class="input-100" type="email" name="email"  placeholder="email"  value="{$datos.email|default:""}" >
+        <input class="input-100" type="password" name="password" id="password" placeholder="Contraseña" value="{$datos.password|default:""}">
+        <input class="input-100" type="password" name="password2"  placeholder="Confirmar Contraseña"  value="{$datos.password2|default:""}" >
+        <input class="input-100" type="file" name="image"/>
         <input type="submit" value="Registrar" class="btn-enviar" />
 
         <p class="form-link">¿YA TIENES UNA CUENTA? &nbsp; <a href="{$_layoutParams.root}usuarios/login"> INGRESAR</a></p>

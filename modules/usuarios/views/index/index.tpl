@@ -42,7 +42,7 @@
                 </a>
             </td>
             <td>
-                <a href="{$_layoutParams.root}usuarios/index/eliminarUsuario/{Cifrado::encryption($us.id)}" >Eliminar</a>
+              {if $us.role != "Administrador"}  <a href="{$_layoutParams.root}usuarios/index/eliminarUsuario/{Cifrado::encryption($us.id)}" >Eliminar</a>{/if}
             </td>
         </tr>
             

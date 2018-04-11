@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-30 03:23:19
+<?php /* Smarty version Smarty-3.1.8, created on 2018-04-11 03:24:26
          compiled from "C:\xampp\htdocs\SanJuanBautista\modules\usuarios\views\registro\perfil.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:8068110465ab7d0b30d0e57-90856059%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b73bd8fb7f5574aad5e91a7f25e75e6f15a9b2ea' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanJuanBautista\\modules\\usuarios\\views\\registro\\perfil.tpl',
-      1 => 1522372999,
+      1 => 1523409863,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5ab7d0b310ff11_44036800')) {function content_5ab7d0b310ff11_44036800($_smarty_tpl) {?><br><br>
 <div class="container">
-    <form class="form-horizontal" method="POST" action="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
+    <form id="formPerfil" class="form-horizontal" method="POST" action="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
 usuarios/registro/perfil" enctype="multipart/form-data">
         <input type="hidden" name="guardar" value="1"/>
         <fieldset>
@@ -38,21 +38,21 @@ usuarios/registro/perfil" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="name" class="col-md-4">Nombres y Apellidos</label>
                         <div class="col-md-8">
-                            <input type="text" id="name" name="txt_nombre" class="form-control" placeholder="Cu&aacute;l es tu nombre" value="<?php echo $_smarty_tpl->tpl_vars['usuario']->value['nombre'];?>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Cu&aacute;l es tu nombre" value="<?php echo $_smarty_tpl->tpl_vars['usuario']->value['nombre'];?>
 "/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="user" class="col-md-4">Usuario</label>
                         <div class="col-md-8">
-                            <input type="text" id="user" name="txt_usuario" class="form-control" placeholder="Cu&aacute;l es tu usuario" value="<?php echo $_smarty_tpl->tpl_vars['usuario']->value['usuario'];?>
+                            <input type="text" id="user" name="user" class="form-control" placeholder="Cu&aacute;l es tu usuario" value="<?php echo $_smarty_tpl->tpl_vars['usuario']->value['usuario'];?>
 "/>
                          </div>
                     </div>
                     <div class="form-group">
                         <label for="email" class="col-md-4">Email</label>
                         <div class="col-md-8">
-                            <input type="text" id="email" name="txt_correo" class="form-control" placeholder="Cu&aacute;l es tu email" value="<?php echo $_smarty_tpl->tpl_vars['usuario']->value['email'];?>
+                            <input type="text" id="email" name="email" class="form-control" placeholder="Cu&aacute;l es tu email" value="<?php echo $_smarty_tpl->tpl_vars['usuario']->value['email'];?>
 "/>
                          </div>
                     </div>   
@@ -78,10 +78,10 @@ usuarios/registro/perfil" enctype="multipart/form-data">
                         <div class="col-md-8">
                             <select id="estado" name="estado" class="form-control">
                                 <option selected value="void" >Seleccionar</option>
-                                <option <?php if ($_smarty_tpl->tpl_vars['usuario']->value['estadoCivil']=="soltero"){?> selected <?php }?>>Soltero(a)</option>
-                                <option <?php if ($_smarty_tpl->tpl_vars['usuario']->value['estadoCivil']=="casado"){?> selected <?php }?> >Casado(a)</option>
-                                <option <?php if ($_smarty_tpl->tpl_vars['usuario']->value['estadoCivil']=="divorsiado"){?> selected <?php }?>>Divorsiado(a)</option>
-                                <option >otros</option>
+                                <option <?php if ($_smarty_tpl->tpl_vars['usuario']->value['estadoCivil']=="Soltero(a)"){?> selected <?php }?>>Soltero(a)</option>
+                                <option <?php if ($_smarty_tpl->tpl_vars['usuario']->value['estadoCivil']=="Casado(a)"){?> selected <?php }?> >Casado(a)</option>
+                                <option <?php if ($_smarty_tpl->tpl_vars['usuario']->value['estadoCivil']=="Divorsiado(a)"){?> selected <?php }?>>Divorsiado(a)</option>
+                                <option <?php if ($_smarty_tpl->tpl_vars['usuario']->value['estadoCivil']=="Otros"){?>  selected <?php }?> >Otros</option>
                             </select>
                          </div>
                     </div>

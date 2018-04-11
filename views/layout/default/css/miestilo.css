@@ -454,6 +454,14 @@ main {
 .icon2 {
   transform: translate(-15px, -100px) scale(0);
 }
+.my-5{
+    margin-top: 3rem;
+    margin-bottom: 3px;
+}
+py-5{
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
 
 .icon3 {
   transform: translate(-128px, -150px) scale(0);

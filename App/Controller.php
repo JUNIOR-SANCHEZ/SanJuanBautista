@@ -130,4 +130,14 @@ abstract class Controller {
         return $ruta;
     }
 
+    protected function eliminarImg($folder,$file){
+        
+        if(file_exists(ROOT."public/img/".$folder."/".$file)){
+            // echo ROOT."public/img/".$folder."/".$file;exit;         
+            unlink(ROOT."public".DS."img".DS.$folder.DS.$file);
+            unlink(ROOT."public".DS."img".DS.$folder.DS."thumb".DS."thumb_".$file);
+        }
+        
+    }
+
 }

@@ -46,6 +46,7 @@ class registroModel extends Model {
         if (!$id) {
             $id = Session::get("id");
         }
+        // echo $estado;exit;
         $statement = $this->_db->prepare("UPDATE usuarios SET  imagen=:img,nombre=:name,usuario=:user,email=:email,phone=:phone,sexo=:sexo,estadoCivil=:estadoCivil,ocupacion=:ocupacion WHERE id = :id");
         $statement->bindParam(":name", $name, PDO::PARAM_STR);
         $statement->bindParam(":user", $user, PDO::PARAM_STR);
@@ -54,8 +55,9 @@ class registroModel extends Model {
         $statement->bindParam(":ocupacion", $ocupacion, PDO::PARAM_STR);
         $statement->bindParam(":phone", $phone, PDO::PARAM_STR);
         $statement->bindParam(":sexo", $sexo, PDO::PARAM_STR);
-        $statement->bindParam(":id", $id, PDO::PARAM_INT);
         $statement->bindParam(":estadoCivil", $estado, PDO::PARAM_STR);
+        $statement->bindParam(":id", $id, PDO::PARAM_INT);
+        
 
         $statement->execute();
     }

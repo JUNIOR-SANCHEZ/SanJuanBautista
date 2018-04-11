@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-31 20:09:05
+<?php /* Smarty version Smarty-3.1.8, created on 2018-04-11 00:40:01
          compiled from "C:\xampp\htdocs\SanJuanBautista\views\layout\default\template.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13759491825ab7ccd8be1fb0-14698482%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b12a5b576b18aeb314a06464c8c4da95d60a37f7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanJuanBautista\\views\\layout\\default\\template.tpl',
-      1 => 1522510073,
+      1 => 1523399997,
       2 => 'file',
     ),
   ),
@@ -58,7 +58,7 @@ theme/style.css" />
 iconos/css/fontello.css">
         <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_css'];?>
 ihover.css">
-        <!--------------------------------------------------------------------------------->
+        
         <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_css'];?>
 grupo_trabajo.css">
         <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
@@ -79,16 +79,14 @@ public/alertify.js-0.3.11/themes/alertify.default.css">
                     <font color="white"> ¿Necesitas informacion? &nbsp<span class="icon-phone"></span>&nbsp(+593) 999187456 &nbsp<span class="icon-mail"></span>fundacion_bautista@gmail.com</font>
                 </p>
                <?php if (isset($_smarty_tpl->tpl_vars['widgets']->value['top'])){?>
-               <?php  $_smarty_tpl->tpl_vars['tp'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['tp']->_loop = false;
+                    <?php  $_smarty_tpl->tpl_vars['tp'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['tp']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['widgets']->value['top']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['tp']->key => $_smarty_tpl->tpl_vars['tp']->value){
 $_smarty_tpl->tpl_vars['tp']->_loop = true;
 ?>
-                <?php echo $_smarty_tpl->tpl_vars['tp']->value;?>
+                        <?php echo $_smarty_tpl->tpl_vars['tp']->value;?>
 
-               <?php } ?>
-               
-               
+                    <?php } ?>
                <?php }?>
             </div>
         </header>
@@ -132,7 +130,17 @@ miscript.js"></script>
         var _root_ = '<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
 ';
 </script>        
-        
+
+<?php if (isset($_smarty_tpl->tpl_vars['_layoutParams']->value['jsPlugin'])&&count($_smarty_tpl->tpl_vars['_layoutParams']->value['jsPlugin'])){?>
+    <?php  $_smarty_tpl->tpl_vars['js'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['js']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['_layoutParams']->value['jsPlugin']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['js']->key => $_smarty_tpl->tpl_vars['js']->value){
+$_smarty_tpl->tpl_vars['js']->_loop = true;
+?>
+        <script src="<?php echo $_smarty_tpl->tpl_vars['js']->value;?>
+" type="text/javascript"></script>
+    <?php } ?>
+<?php }?>        
 
 <?php if (isset($_smarty_tpl->tpl_vars['_layoutParams']->value['js'])&&count($_smarty_tpl->tpl_vars['_layoutParams']->value['js'])){?>
     <?php  $_smarty_tpl->tpl_vars['js'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['js']->_loop = false;

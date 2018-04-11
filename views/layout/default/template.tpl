@@ -16,7 +16,7 @@
         
         <link rel="stylesheet" href="{$_layoutParams.ruta_css}iconos/css/fontello.css">
         <link rel="stylesheet" href="{$_layoutParams.ruta_css}ihover.css">
-        <!--------------------------------------------------------------------------------->
+        
         <link rel="stylesheet" href="{$_layoutParams.ruta_css}grupo_trabajo.css">
         <link rel="stylesheet" href="{$_layoutParams.root}public/alertify.js-0.3.11/themes/alertify.core.css">
         <link rel="stylesheet" href="{$_layoutParams.root}public/alertify.js-0.3.11/themes/alertify.default.css">
@@ -34,11 +34,9 @@
                     <font color="white"> ¿Necesitas informacion? &nbsp<span class="icon-phone"></span>&nbsp(+593) 999187456 &nbsp<span class="icon-mail"></span>fundacion_bautista@gmail.com</font>
                 </p>
                {if isset($widgets.top)}
-               {foreach item=tp from=$widgets.top}
-                {$tp}
-               {/foreach}
-               
-               
+                    {foreach item=tp from=$widgets.top}
+                        {$tp}
+                    {/foreach}
                {/if}
             </div>
         </header>
@@ -66,7 +64,12 @@
 <script type="text/javascript">
         var _root_ = '{$_layoutParams.root}';
 </script>        
-        
+
+{if isset($_layoutParams.jsPlugin) && count($_layoutParams.jsPlugin)}
+    {foreach item=js from=$_layoutParams.jsPlugin}
+        <script src="{$js}" type="text/javascript"></script>
+    {/foreach}
+{/if}        
 
 {if isset($_layoutParams.js) && count($_layoutParams.js)}
     {foreach item=js from=$_layoutParams.js}

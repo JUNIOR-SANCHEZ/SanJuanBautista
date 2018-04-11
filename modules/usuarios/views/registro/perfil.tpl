@@ -1,6 +1,6 @@
 <br><br>
 <div class="container">
-    <form class="form-horizontal" method="POST" action="{$_layoutParams.root}usuarios/registro/perfil" enctype="multipart/form-data">
+    <form id="formPerfil" class="form-horizontal" method="POST" action="{$_layoutParams.root}usuarios/registro/perfil" enctype="multipart/form-data">
         <input type="hidden" name="guardar" value="1"/>
         <fieldset>
             <center><legend>DATOS DEL USUARIO</legend></center>
@@ -11,19 +11,19 @@
                     <div class="form-group">
                         <label for="name" class="col-md-4">Nombres y Apellidos</label>
                         <div class="col-md-8">
-                            <input type="text" id="name" name="txt_nombre" class="form-control" placeholder="Cu&aacute;l es tu nombre" value="{$usuario.nombre}"/>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Cu&aacute;l es tu nombre" value="{$usuario.nombre}"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="user" class="col-md-4">Usuario</label>
                         <div class="col-md-8">
-                            <input type="text" id="user" name="txt_usuario" class="form-control" placeholder="Cu&aacute;l es tu usuario" value="{$usuario.usuario}"/>
+                            <input type="text" id="user" name="user" class="form-control" placeholder="Cu&aacute;l es tu usuario" value="{$usuario.usuario}"/>
                          </div>
                     </div>
                     <div class="form-group">
                         <label for="email" class="col-md-4">Email</label>
                         <div class="col-md-8">
-                            <input type="text" id="email" name="txt_correo" class="form-control" placeholder="Cu&aacute;l es tu email" value="{$usuario.email}"/>
+                            <input type="text" id="email" name="email" class="form-control" placeholder="Cu&aacute;l es tu email" value="{$usuario.email}"/>
                          </div>
                     </div>   
                     <div class="form-group">
@@ -47,10 +47,10 @@
                         <div class="col-md-8">
                             <select id="estado" name="estado" class="form-control">
                                 <option selected value="void" >Seleccionar</option>
-                                <option {if $usuario.estadoCivil == "soltero"} selected {/if}>Soltero(a)</option>
-                                <option {if $usuario.estadoCivil == "casado"} selected {/if} >Casado(a)</option>
-                                <option {if $usuario.estadoCivil == "divorsiado"} selected {/if}>Divorsiado(a)</option>
-                                <option >otros</option>
+                                <option {if $usuario.estadoCivil == "Soltero(a)"} selected {/if}>Soltero(a)</option>
+                                <option {if $usuario.estadoCivil == "Casado(a)"} selected {/if} >Casado(a)</option>
+                                <option {if $usuario.estadoCivil == "Divorsiado(a)"} selected {/if}>Divorsiado(a)</option>
+                                <option {if $usuario.estadoCivil == "Otros"}  selected {/if} >Otros</option>
                             </select>
                          </div>
                     </div>

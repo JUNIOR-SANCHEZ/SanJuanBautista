@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-27 22:20:47
+<?php /* Smarty version Smarty-3.1.8, created on 2018-04-07 17:40:33
          compiled from "C:\xampp\htdocs\SanJuanBautista\views\blog\noticia.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:14259552265ab991efc72e89-58611946%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '38704b66ffaf00cc8cecc91f18b3f68b79944e7e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanJuanBautista\\views\\blog\\noticia.tpl',
-      1 => 1522182046,
+      1 => 1522248209,
       2 => 'file',
     ),
   ),

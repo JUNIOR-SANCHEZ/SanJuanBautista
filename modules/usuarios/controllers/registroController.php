@@ -13,51 +13,53 @@ class registroController extends Controller {
         if (Session::get('autenticado')) {
             $this->redireccionar();
         }
+        $this->_view->setJsPlugin(array("validate"));
+        $this->_view->setJs(array("validacionRegistro"));
         $this->_view->assign("titulo", "Registro");
         if ($this->getInt("enviar") == 1) {
             $this->_view->assign("datos", $_POST);
-            if (!$this->getSql("txt_nombre")) {
+            if (!$this->getSql("name")) {
                 $this->_view->assign("_error", "Debe introducir  su nombre");
                 $this->_view->renderizar("index", "registro");
                 exit;
             }
-            if (!$this->getPostParam("txt_usuario")) {
+            if (!$this->getPostParam("user")) {
                 $this->_view->assign("_error", "Debe introducir  el usuario");
                 $this->_view->renderizar("index", "registro");
                 exit;
             }
-            if ($this->_sqlUser->checkUser($this->getPostParam("txt_usuario"))) {
+            if ($this->_sqlUser->checkUser($this->getPostParam("user"))) {
                 $this->_view->assign("_error", "El usuario " . $this->getPostParam("txt_usuario") . " ya exite.");
                 $this->_view->renderizar("index", "registro");
                 exit;
             }
 
-            if (!$this->checkEmail($this->getPostParam("txt_correo"))) {
+            if (!$this->checkEmail($this->getPostParam("email"))) {
                 $this->_view->assign("_error", "El correo es invalido");
                 $this->_view->renderizar("index", "registro");
                 exit;
             }
 
-            if ($this->_sqlUser->checkEmail($this->getPostParam("txt_correo"))) {
-                $this->_view->assign("_error", "El correo " . $this->getPostParam("txt_correo") . " ya exite");
+            if ($this->_sqlUser->checkEmail($this->getPostParam("emaio"))) {
+                $this->_view->assign("_error", "El correo " . $this->getPostParam("email") . " ya exite");
                 $this->_view->renderizar("index", "registro");
                 exit;
             }
-            if (!$this->getSql("txt_pass")) {
+            if (!$this->getSql("password")) {
                 $this->_view->assign("_error", "Debe introducir  una contraseña");
                 $this->_view->renderizar("index", "registro");
                 exit;
             }
-            if ($this->getPostParam("txt_pass") != $this->getPostParam("txt_passConfirmar")) {
+            if ($this->getPostParam("password") != $this->getPostParam("password2")) {
                 $this->_view->assign("_error", "Las contraseñas no coinciden");
                 $this->_view->renderizar("index", "registro");
                 exit;
             }
             $imagen = '';
 
-            if ($_FILES['imagen']['name']) {
+            if ($_FILES['image']['name']) {
                 $ruta = $this->getRutaCarpetaImagen("user");
-                $upload = new upload($_FILES['imagen'], 'es_Es');
+                $upload = new upload($_FILES['image'], 'es_Es');
                 $upload->allowed = array('image/*');
                 $upload->file_new_name_body = 'upl_' . uniqid();
                 $upload->process($ruta);
@@ -78,17 +80,17 @@ class registroController extends Controller {
             }
 
             $this->_sqlUser->addUser(
-                    $this->getSql("txt_nombre"), $this->getAlphaNum("txt_usuario"), $this->getPostParam("txt_pass"), $this->getPostParam("txt_correo"), $imagen
+                    $this->getSql("name"), $this->getAlphaNum("user"), $this->getPostParam("password"), $this->getPostParam("email"), $imagen
             );
 
-            if (!$this->_sqlUser->checkUser($this->getPostParam("txt_usuario"))) {
+            if (!$this->_sqlUser->checkUser($this->getPostParam("user"))) {
                 $this->_view->assign("_error", "Error al registrar el usuario.");
                 $this->_view->renderizar("index", "registro");
                 exit;
             }
             $this->_view->assign("datos", array());
             $this->_view->assign("mensaje", "El usuario se registro con exito.");
-            $this->redireccionar("usuarios/registro");
+            $this->redireccionar("usuarios/login");
             exit;
         }
 
@@ -100,23 +102,24 @@ class registroController extends Controller {
             $this->redireccionar();
         }
         
-        $this->_view->setJs(array("funcionesJs"));
+        $this->_view->setJsPlugin(array("validate"));
+        $this->_view->setJs(array("funcionesJs","validacionPerfil"));
         $this->_view->assign("titulo", "Perfil");
         $this->_view->assign("usuario", $this->_sqlUser->getUserById(Session::get("id")));
         
         
         if ($this->getInt("guardar") == 1) {
-            if (!$this->getSql("txt_nombre")) {
+            if (!$this->getSql("name")) {
                 $this->_view->assign("_error", "Debe introducir  su nombre");
                 $this->_view->renderizar("perfil", "registro");
                 exit;
             }
-            if (!$this->getPostParam("txt_usuario")) {
+            if (!$this->getPostParam("user")) {
                 $this->_view->assign("_error", "Debe introducir  el usuario");
                 $this->_view->renderizar("perfil", "registro");
                 exit;
             }
-            if (!$this->checkEmail($this->getPostParam("txt_correo"))) {
+            if (!$this->checkEmail($this->getPostParam("email"))) {
                 $this->_view->assign("_error", "El correo es invalido");
                 $this->_view->renderizar("perfil", "registro");
                 exit;
@@ -144,8 +147,12 @@ class registroController extends Controller {
                 $this->_view->renderizar("perfil", "registro");
                 exit;
             }
+            // echo $this->getPostParam("estado"); exit;
 
             if ($_FILES['imagen']['name']) {
+                
+                $this->eliminarImg("user",$imagen);
+                
                 $ruta = $this->getRutaCarpetaImagen("user");
                 $upload = new upload($_FILES['imagen'], 'es_Es');
                 $upload->allowed = array('image/*');
@@ -165,8 +172,11 @@ class registroController extends Controller {
                     $this->_view->renderizar('perfil', 'blog');
                     exit;
                 }
+
+
             }
-            $this->_sqlUser->editUser($imagen,$this->getSql("txt_nombre"), $this->getPostParam("txt_usuario"), $this->getPostParam("txt_correo"),$phone, $this->getPostParam("sexo"), $this->getPostParam("estado"),$ocupacion);
+            $this->_sqlUser->editUser($imagen,$this->getSql("name"), $this->getPostParam("user"), $this->getPostParam("email"),$phone, $this->getPostParam("sexo"), $this->getPostParam("estado"),$ocupacion);
+            
             $this->redireccionar("usuarios/registro/perfil");
             exit;
         }

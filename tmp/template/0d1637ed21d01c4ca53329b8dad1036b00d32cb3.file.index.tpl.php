@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-03-25 20:35:53
+<?php /* Smarty version Smarty-3.1.8, created on 2018-04-11 08:09:27
          compiled from "C:\xampp\htdocs\SanJuanBautista\modules\usuarios\views\index\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:10694420615ab7ec09e5bbb9-14267182%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0d1637ed21d01c4ca53329b8dad1036b00d32cb3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanJuanBautista\\modules\\usuarios\\views\\index\\index.tpl',
-      1 => 1521994922,
+      1 => 1523426963,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_5ab7ec09e64731_50373484',
   'variables' => 
   array (
     '_layoutParams' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'us' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5ab7ec09e64731_50373484',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5ab7ec09e64731_50373484')) {function content_5ab7ec09e64731_50373484($_smarty_tpl) {?><div class="row">
     <div class="col-md-4">
@@ -79,9 +79,9 @@ usuarios/index/permisos/<?php echo $_smarty_tpl->tpl_vars['us']->value['id'];?>
                 </a>
             </td>
             <td>
-                <a href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
+              <?php if ($_smarty_tpl->tpl_vars['us']->value['role']!="Administrador"){?>  <a href="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
 usuarios/index/eliminarUsuario/<?php echo Cifrado::encryption($_smarty_tpl->tpl_vars['us']->value['id']);?>
-" >Eliminar</a>
+" >Eliminar</a><?php }?>
             </td>
         </tr>
             
