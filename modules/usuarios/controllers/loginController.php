@@ -8,24 +8,25 @@ class loginController extends Controller {
     }
 
     public function index() {
-        
+        $this->_view->setJsPlugin(array("validate"));
+        $this->_view->setJs(array("validacionLogin"));   
         if (Session::get("autenticado")) $this->redireccionar();
         $this->_view->assign("titulo","Login");
         if ($this->getInt('enviar') == 1) {
             $this->_view->assign("datos",$_POST);
-            if(!$this->getAlphaNum('txt_usuario')){
+            if(!$this->getAlphaNum('user')){
                  $this->_view->assign("_error","Escriba el nombre de usuario");
                 $this->_view->renderizar('index', 'login');
                 exit;
             }
-            if(!$this->getSql('txt_pass')){
+            if(!$this->getSql('password')){
                  $this->_view->assign("_error","Escriba una contraseña");
                  $this->_view->renderizar('index', 'login');
                 exit;
             }
             $row = $this->_login->getUser(
-                    $this->getAlphaNum('txt_usuario'),
-                    $this->getSql('txt_pass')
+                    $this->getAlphaNum('user'),
+                    $this->getSql('password')
                     );
             
             if(!$row){

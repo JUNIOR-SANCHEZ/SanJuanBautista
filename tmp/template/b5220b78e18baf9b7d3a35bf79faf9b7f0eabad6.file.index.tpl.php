@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2018-04-11 08:20:53
+<?php /* Smarty version Smarty-3.1.8, created on 2018-04-11 14:20:37
          compiled from "C:\xampp\htdocs\SanJuanBautista\modules\usuarios\views\login\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1233269925ab98f93290879-43473954%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b5220b78e18baf9b7d3a35bf79faf9b7f0eabad6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SanJuanBautista\\modules\\usuarios\\views\\login\\index.tpl',
-      1 => 1523427650,
+      1 => 1523449229,
       2 => 'file',
     ),
   ),
@@ -74,6 +74,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     margin: 0 auto;
     margin-top: 140px;
   }
+  .error{
+    width:100%;    
+  }
 }
 
 </style>
@@ -81,15 +84,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <div class="contenedor-login">
     <img src="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['ruta_img'];?>
 User-icon.png" alt="">
-    <form action="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
+    <form id="formLogin" action="<?php echo $_smarty_tpl->tpl_vars['_layoutParams']->value['root'];?>
 usuarios/login" method="POST">
         <input type="hidden" name="enviar" value="1"/>
         <div class="form-inputs">
-            <input type="text" id="usuario" class="login-inputs" name="txt_usuario" placeholder="Usuario" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['datos']->value['txt_usuario'])===null||$tmp==='' ? '' : $tmp);?>
+            <input type="text" id="usuario" class="login-inputs" name="user" placeholder="Usuario" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['datos']->value['user'])===null||$tmp==='' ? '' : $tmp);?>
 ">
         </div>
         <div class="form-inputs">
-            <input type="password" id="clave" class="login-inputs" name="txt_pass" placeholder="Contraseña" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['datos']->value['txt_pass'])===null||$tmp==='' ? '' : $tmp);?>
+            <input type="password" id="clave" class="login-inputs" name="password" placeholder="Contraseña" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['datos']->value['password'])===null||$tmp==='' ? '' : $tmp);?>
 ">
         </div>
 

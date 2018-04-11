@@ -48,19 +48,22 @@
     margin: 0 auto;
     margin-top: 140px;
   }
+  .error{
+    width:100%;    
+  }
 }
 
 </style>
 
 <div class="contenedor-login">
     <img src="{$_layoutParams.ruta_img}User-icon.png" alt="">
-    <form action="{$_layoutParams.root}usuarios/login" method="POST">
+    <form id="formLogin" action="{$_layoutParams.root}usuarios/login" method="POST">
         <input type="hidden" name="enviar" value="1"/>
         <div class="form-inputs">
-            <input type="text" id="usuario" class="login-inputs" name="txt_usuario" placeholder="Usuario" value="{$datos.txt_usuario|default:""}">
+            <input type="text" id="usuario" class="login-inputs" name="user" placeholder="Usuario" value="{$datos.user|default:""}">
         </div>
         <div class="form-inputs">
-            <input type="password" id="clave" class="login-inputs" name="txt_pass" placeholder="Contraseña" value="{$datos.txt_pass|default:""}">
+            <input type="password" id="clave" class="login-inputs" name="password" placeholder="Contraseña" value="{$datos.password|default:""}">
         </div>
 
         <input class="btn-Ingresar" type="submit" value="ENTRAR"/>
